@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
-import { Flex } from '../../../ItemDetails/itemDetails.styles'
+import { Flex } from '../../../../styles/global-styles.component'
 
 export const Card = styled(Flex)`
   padding: 16px;
