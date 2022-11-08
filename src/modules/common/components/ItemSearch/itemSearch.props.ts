@@ -1,7 +1,3 @@
-export interface Shipping {
-  free_shipping: boolean
-}
-
 export interface Address {
   city_id: null | string
   city_name: string
@@ -9,14 +5,20 @@ export interface Address {
   state_name: string
 }
 
+export interface Price {
+  amount: number
+  currency: string
+  decimals: number
+}
+
 export interface Product {
-  address: Address
-  currency_id: string
+  condition: string
+  free_shipping: boolean
   id: string
-  price: number
-  shipping: Shipping
-  thumbnail: string
+  picture: string
+  price: Price
   title: string
+  address?: Address
 }
 
 export interface ItemSearchProps {

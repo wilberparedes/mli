@@ -23,14 +23,14 @@ export const ItemSearch: FC<ItemSearchProps> = ({
   return (
     <>
       <Card onClick={onClick}>
-        <Thumbnail src={product.thumbnail} alt={product.title} />
+        <Thumbnail src={product.picture} alt={product.title} />
         <Flex1>
           <ContainerLeft>
             <ContainerTitle>
               <Text color={colors.black} size={'24px'}>
-                {formatPrice(product.price, product.currency_id)}
+                {formatPrice(product.price.amount, product.price.currency)}
               </Text>
-              {Boolean(product?.shipping?.free_shipping) && (
+              {product.free_shipping && (
                 <Icon src={shipping} alt='shipping' />
               )}
             </ContainerTitle>
@@ -40,7 +40,7 @@ export const ItemSearch: FC<ItemSearchProps> = ({
           </ContainerLeft>
           <ContainerRight>
             <Text color={colors.grayDark} size={'12px'}>
-              {product.address.state_name}
+              {product?.address?.state_name}
             </Text>
           </ContainerRight>
         </Flex1>
