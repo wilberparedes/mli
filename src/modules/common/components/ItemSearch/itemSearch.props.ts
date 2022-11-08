@@ -19,6 +19,7 @@ export interface Product {
   price: Price
   title: string
   address?: Address
+  sold_quantity?: string
 }
 
 export interface ItemSearchProps {
